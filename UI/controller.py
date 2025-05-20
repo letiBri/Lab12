@@ -47,7 +47,6 @@ class Controller:
             self._view.txtOut2.controls.append(ft.Text(f"{chiave} --> {valore}"))
         self._view.update_page()
 
-
     def handle_path(self, e):
         self._view.txtOut3.controls.clear()
         if self._view.txtN.value is None or self._view.txtN.value == "":
@@ -65,3 +64,9 @@ class Controller:
             self._view.create_alert("Inserire un valore intero uguale a 2 o superiore")
             self._view.update_page()
             return
+
+        score, path = self._model.getPercorso(numArchi)
+        self._view.txtOut3.controls.append(ft.Text(f"Peso cammino massimo: {score}"))
+        for p in path:
+            self._view.txtOut3.controls.append(ft.Text(f"{p[0].Retailer_name} --> {p[1].Retailer_name}: {p[2]}"))
+        self._view.update_page()
