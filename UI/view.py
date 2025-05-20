@@ -50,7 +50,7 @@ class View(ft.UserControl):
         self._page.update()
 
 
-        self.btn_volume = ft.ElevatedButton(text="Calcola Volumi", on_click=self._controller.handle_volume)
+        self.btn_volume = ft.ElevatedButton(text="Calcola Volumi", on_click=self._controller.handle_volume, disabled=True)
         row2 = ft.Row([self.btn_volume],
                       alignment=ft.MainAxisAlignment.CENTER)
         self._page.controls.append(row2)
@@ -59,8 +59,8 @@ class View(ft.UserControl):
         self._page.controls.append(self.txtOut2)
         self._page.update()
 
-        self.txtN = ft.TextField(label="Lunghezza percorso")
-        self.btn_path = ft.ElevatedButton(text="Calcola percorso", on_click=self._controller.handle_path)
+        self.txtN = ft.TextField(label="Lunghezza percorso", disabled=True)
+        self.btn_path = ft.ElevatedButton(text="Calcola percorso", on_click=self._controller.handle_path, disabled=True)
 
         row3 = ft.Row([self.txtN, self.btn_path],
                       alignment=ft.MainAxisAlignment.CENTER)
